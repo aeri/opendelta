@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	height: 100%;
+}
+body {
+	background-color: #343434;
+	font-family: Bitstream Vera Sans, Tahoma, sans-serif;
+	font-size: 11px;
+	color: #757575;
+}
+table {
+	font-size: inherit;
+}
+a {
+	color: #757575;
+	text-decoration: none;
+}
+a:hover {
+	color: #888888;
+}
+#head, #foot {
+	height: 6%;
+	min-height: 25px;
+	width: 100%;
+	background-color: #151515;
+	overflow: hidden;
+}
+#foot {
+	text-align: center;
+}
+#foot > span, #head > span {
+	top: 35%;
+	position: relative;
+	padding: 20px;
+}
+#foot > span {
+	color: #393939;
+}
+#maincontent {
+	width: 100%;
+	height: 88%;
+}
+#logo {
+	height: 200px;
+	width: 550px;
+	background-image: url('https://i.imgur.com/vHOYZrq.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	padding: 50px 10px 0px 10px;
+	text-align: center;
+}

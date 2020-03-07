@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>opendelta</title>
+<meta http-equiv="X-UA-Compatible" content="chrome=1; IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body cz-shortcut-listen="true">
+<div id="head"> </div>
+<table class="layout" id="maincontent">
+  <tbody>
+    <tr>
+      <td valign="middle" align="center"><div id="logo"> </div>
+        <div class="poetry"></div>
+        <span class="center"></span></td>
+    </tr>
+  </tbody>
+</table>
+<div id="foot"> <span><a href="https://github.com/aeri/opendelta">opendelta | naval.cat</a></span> </div>
+</body>
+</html>
+<script> 
+    var url= "/opendelta/delta.php?x=";
+    var file = window.location.search.substr(2);
+    url = url.concat(btoa(file));
+    console.log(url);
+    setTimeout(function(){ window.location = url; }, 1000);
+</script>
