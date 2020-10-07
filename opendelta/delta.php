@@ -10,7 +10,7 @@ $key = $_GET[ "x" ];
 // Set absolute path of our files.
 $rute = '<ABSOULTE_PATH>';
 
-// Set default domain.
+// Set default domain with protocol.
 $domain = "<DOMAIN>";
 
 // Set our cipher.
@@ -37,9 +37,23 @@ $rute .= $output;
 date_default_timezone_set( 'UTC' );
 
 // Register timestamp and IP address of client for accounting.
-$line = date( 'Y-m-d H:i:s' ) . " – $_SERVER[REMOTE_ADDR]" . " – $file";
 
-file_put_contents( 'visitors.log', $line . PHP_EOL, FILE_APPEND );
+$browser = $_SERVER['HTTP_USER_AGENT'];
+
+$ipAddress = 'NA';
+
+//Check to see if the CF-Connecting-IP header exists.
+if(isset($_SERVER["HTTP_CF_CONNECTING_IP"])){
+    //If it does, assume that PHP app is behind Cloudflare.
+    $ipAddress = $_SERVER["HTTP_CF_CONNECTING_IP"];
+} else{
+    //Otherwise, use REMOTE_ADDR.
+    $ipAddress = $_SERVER['REMOTE_ADDR'];
+}
+
+$line = date('Y-m-d H:i:s') . " – $ipAddress" . " – $browser" . " – $output";
+
+file_put_contents('visitors.log', $line . PHP_EOL, FILE_APPEND);
 
 if ( file_exists( $rute ) && $output != '' ) {
 	header( 'Content-Description: File Transfer' );
